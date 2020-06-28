@@ -19,15 +19,45 @@ export default class Main extends Component{
   render(){
   return (
   <div className="product-list">
-    {this.state.project.map(project=> (
-      <article  key={project.id}>
-      <strong>{project.descricao}</strong>
-      <p>Total da Venda {project.total_venda_prazo}</p>
-      <p>Total da Cobrança {project.total_cobrado}</p>
+    
+  <div className="card-body" >
+  <div className="table-responsive">
+    <table className="table table-bordered" >
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Venda</th>
+          <th>Cobrança</th>
+          <th>V.Vendedor</th>
+          <th>Q.Vendedor</th>
+          <th>Acesso</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Descrição</th>
+          <th>Venda</th>
+          <th>Cobrança</th>
+          <th>V. Vendedor</th>
+          <th>Q.Vendedor</th>
+          <th>Acesso</th>
+        </tr>
+      </tfoot>
+      
+      {this.state.project.map(project=> (
+      <tbody  key={project.id}>
+      <td>{project.descricao}</td>
+      <td>{project.total_venda_prazo}</td>
+      <td>{project.total_cobrado}</td>
+      <td>{project.total_vales_vendedor}</td>
+      <td>{project.quant_vendedores}</td>
       <Link to={`/project/${project.id}`}>Acessar</Link>
      
-      </article>
+      </tbody>
     ))}
+    </table>
+  </div>
+</div>
   </div>)
   }
 }

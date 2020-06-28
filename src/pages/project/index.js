@@ -20,6 +20,7 @@ export default class Project extends Component{
       <Link to={`/`}>Retornar</Link>
         <h2>{project.descricao}</h2>
       </div>
+      
 
     );
   }
